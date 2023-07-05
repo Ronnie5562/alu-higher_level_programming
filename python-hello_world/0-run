@@ -1,5 +1,2 @@
-#!/usr/bin/python3
-# Write a Shell script that runs a Python script.
-# The Python file will be saved in the enn variable $PYFILE
-
+#!/bin/bash
 python3 "$PYFILE"
