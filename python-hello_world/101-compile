@@ -1,4 +1,3 @@
 #!/bin/bash
-export PYFILE=main.py
 echo "Compiling $PYFILE ..."
-/usr/bin/py3compile $PYFILE && mv __pycache__/$(ls __pycache__/) $PYFILE'c' && rm -rf __pycache__
+/usr/bin/py3compile $PYFILE && mv __pycache__/$(ls __pycache__/) $PYFILE'c' && rmdir __pycache__
