@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     """
-        Imports functions from a module, does some Maths, and prints the result.
+        Imports functions from a module, does some Maths, and outputs the result.
     """
     from calculator_1 import add, sub, mul, div
     a = 10
