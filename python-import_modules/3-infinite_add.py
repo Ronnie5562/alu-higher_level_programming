@@ -8,5 +8,3 @@ if __name__ == "__main__":
     for arg in range(1, len(argv)):
         ans += int(argv[arg])
     print(ans)
-
-
