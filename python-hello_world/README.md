@@ -2,7 +2,7 @@
 
 ![1294286](https://github.com/Ronnie5562/ML002/assets/110787129/b5f0cfd4-adcf-4a07-a019-a3832ab26d96)
 
-### Facilitator Disclamer
+## Facilitator Disclamer
 ```
 Welcome to the Python world!
 
@@ -58,7 +58,7 @@ Enjoy!
 - Your code should use the pycodestyle (version 2.7.*)
 - All your files must be executable
 - The length of your files will be tested using `wc`
-- 
+
 ***Shell Scripts***
 - Allowed editors: `vi`, `vim`, `emacs`
 - All your scripts will be tested on Ubuntu 20.04 LTS
@@ -66,7 +66,9 @@ Enjoy!
 - All your files should end with a new line
 - The first line of all your files should be exactly `#!/bin/bash`
 - All your files must be executable
+
 ## BUGS
 No known bugs at this time.
+
 ## AUTHOR
 [Abimbola Ronald](https://www.linkedin.com/in/abimbola-ronald-977299224/)
