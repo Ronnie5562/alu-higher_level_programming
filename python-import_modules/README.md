@@ -1,6 +1,5 @@
 # PYTHON - IMPORT & MODULES 🧊🧊🧊🧊
-![1294277](https://github.com/Ronnie5562/ML002/assets/110787129/ccc056f6-6624-4a16-b1c8-9003fe54bd8e)
-
+![image](https://github.com/Ronnie5562/ML002/assets/110787129/a295de56-848c-40aa-bb2a-75c4eb716dd9)
 ## RESOURCES
 ***Read or watch:***
 - [Modules](https://docs.python.org/3/tutorial/modules.html) – Unlock the power of modular programming!
