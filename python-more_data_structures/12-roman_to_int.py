@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
     rm = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     num, last_rom, num_list = 0, 0, [0]
     for char in roman_string:
-        if char in roman_num:
+        if char in rm:
             if rm[char] <= last_rom:
                 num += to_subtract(num_list)
                 num_list = [rm[char]]
