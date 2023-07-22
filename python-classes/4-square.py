@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define a class Square."""
+"""A class Square that defines a square by: (based on 3-square.py)"""
 
 
 class Square:
@@ -20,7 +20,7 @@ class Square:
             size (int): The size of the square.
         """
         Square.validate(self, size)
-        
+
     @property
     def size(self):
         """Get the current size of the square."""
