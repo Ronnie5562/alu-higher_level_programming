@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """Define a class Square."""
 
+
 class Square:
     """A class that defines a square"""
 
     def validate(self, size):
+        """Validates thar size is an integer"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
