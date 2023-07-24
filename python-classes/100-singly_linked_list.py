@@ -14,23 +14,23 @@ class Node:
         """
         self.__data = data
         self.__next_node = next_node
-        
+
     @property
-    """property(get&set) for the data of the Node."""
     def data(self):
+        """property(get&set) for the data of the Node."""
         return self.__data
-    
+
     @data.setter
     def data(self, value):
         if (not isinstance(value, int)):
             raise TypeError("data must be an integer")
         self.__data = value
-    
+
     @property
     def next_node(self):
         """property(get&set) for the next_node."""
         return self.__next_node
-    
+
     @next_node.setter
     def next_node(self, value):
         if (not isinstance(value, Node) and value is not None):
@@ -43,7 +43,7 @@ class SinglyLinkedList:
     def __init__(self):
         """Initialize a new SinglyLinkedList."""
         self.__head = None
-    
+
     def sorted_insert(self, value):
         """Insert a new Node to the SinglyLinkedList.
 
@@ -66,9 +66,9 @@ class SinglyLinkedList:
                 current_node = current_node.next_node
             new_node.next_node = current_node.next_node
             current_node.next_node = new_node
-    
+
     def __str__(self):
-        """Defines the print() representation of a SinglyLinkedList obj"""
+        """The print() representation of a SinglyLinkedList obj"""
         node_list = []
         current_node = self.__head
         while (current_node is not None):
