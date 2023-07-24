@@ -27,8 +27,8 @@ class Node:
         self.__data = value
     
     @property
-    """property(get&set) for the next_node."""
     def next_node(self):
+        """property(get&set) for the next_node."""
         return self.__next_node
     
     @next_node.setter

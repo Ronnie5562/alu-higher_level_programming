@@ -16,7 +16,7 @@ class Square:
     def size(self):
         """property(get&set) for the current size of the square."""
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         if (not isinstance(value, int) and not isinstance(value, float)):
@@ -24,11 +24,11 @@ class Square:
         if (size < 0):
             raise ValueError('size must be >= 0')
         self.__size = value
-    
+
     def area(self):
         """Returns the area of the current square."""
         return (self.__size**2)
-    
+
     def __eq__(self, other_square):
         """Returns the == comparision to a Square."""
         return self.area() == other_square.area()
