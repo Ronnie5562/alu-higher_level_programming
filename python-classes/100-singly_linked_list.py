@@ -36,7 +36,8 @@ class Node:
         if (not isinstance(value, Node) and value is not None):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
-    
+
+
 class SinglyLinkedList:
     """This class represents a singly-linked list."""
 
@@ -54,7 +55,7 @@ class SinglyLinkedList:
             value (Node): The new Node to insert.
         """
         new_node = Node(value)
-        if self.__head == None:
+        if self.__head is None:
             self.__head = new_node
         elif self.__head.data > new_node.data:
             new_node.next_node = self.__head
@@ -62,7 +63,7 @@ class SinglyLinkedList:
         else:
             current_node = self.__head
             while (current_node.next_node is not None and
-            current_node.next_node.data < value):
+                    current_node.next_node.data < value):
                 current_node = current_node.next_node
             new_node.next_node = current_node.next_node
             current_node.next_node = new_node
