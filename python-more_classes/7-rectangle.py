@@ -64,12 +64,12 @@ class Rectangle:
         """Returns the rectangle with the character #"""
         if self.__width == 0 or self.__height == 0:
             return ("")
-        output = []
+        outp = []
         for x in range(self.__height):
-            [output.append(str(self.print_symbol)) for y in range(self.__width)]
+            [outp.append(str(self.print_symbol)) for y in range(self.__width)]
             if x != self.__height - 1:
-                output.append('\n')
-        return "".join(output)
+                outp.append('\n')
+        return "".join(outp)
 
     def __repr__(self):
         """Return the string representation of the Rectangle."""
