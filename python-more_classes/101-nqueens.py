@@ -4,7 +4,7 @@ import sys
 
 
 class Solution:
-    def solveNQueens(self, n: int):
+    def solveNQueens(self, n):
         """Find all solutions to the N-Queens problem.
         Args: n (int) - The size of the chessboard (N).
         Returns: list - A list of solutions, each as a nested list of
@@ -34,7 +34,7 @@ class Solution:
         """
         if not state:
             return set(range(n))
- 
+
         position = len(state)
         candidates = set(range(n))
         for row, col in enumerate(state):
@@ -60,20 +60,31 @@ class Solution:
             state.append(candidate)
             self.search(state, solutions, n)
             state.pop()
-    
+ 
     def state_to_nested_list(self, state, n):
         """Convert the state representation to a nested list.
         Args: state (list) - A list representing the current state of the
                 chessboard.
               n (int) - The size of the chessboard (N).
-        Returns: list - A nested list of [row, column] positions for each queen.
+        Returns: list - A nested list of [row, column] positions for each queen
         """
         answer = []
         for index, value in enumerate(state):
             answer.append([index, value])
         return answer
 
-NQueen = Solution()
-solution_list = NQueen.solveNQueens(int(sys.argv[1]))
-for solution in solution_list:
-    print(solution)
+arg = sys.argv
+try:
+    arg_1 = int(sys.argv[1])
+except (ValueError, TypeError):
+    print("N must be a number")
+except IndexError:
+    print("Usage: nqueens N")
+else:
+    if arg_1 < 4:
+        print("N must be at least 4")
+    else:
+        NQueen = Solution()
+        solution_list = NQueen.solveNQueens(int(sys.argv[1]))
+        for solution in solution_list:
+            print(solution)
