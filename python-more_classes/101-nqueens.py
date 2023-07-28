@@ -60,7 +60,7 @@ class Solution:
             state.append(candidate)
             self.search(state, solutions, n)
             state.pop()
- 
+
     def state_to_nested_list(self, state, n):
         """Convert the state representation to a nested list.
         Args: state (list) - A list representing the current state of the
