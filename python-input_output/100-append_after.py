@@ -3,12 +3,10 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """Inserts a line of text to a file based on some conditions"""
-    lines = []
     with open(filename, 'r', encoding='UTF-8') as file:
-        lines.extend(file.readlines())
-        for index, line in enumerate(lines):
-            if search_string in line:
-                lines.insert(index + 1, new_string)
+        lns = file.readlines()
+
+    new_lns = [ln + new_string if search_string in ln else ln for ln in lns]
+
     with open(filename, 'w', encoding='UTF-8') as file:
-        file.writelines(lines)
+        file.writelines(new_lns)
