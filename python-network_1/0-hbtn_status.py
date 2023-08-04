@@ -3,6 +3,7 @@
 - Write a Python script that fetches https://alu-intranet.hbtn.io/status
 - using the urllib package.
 """
+import urllib.request
 
 
 if __name__ == "__main__":
