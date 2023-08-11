@@ -15,7 +15,7 @@ def matrix_divided(matrix, div):
         TypeError: _if div is not an integer_
         ZeroDivisionError: _if div is 0_
         TypeError: _if all the lists in matrix are not of same length_
-        TypeError: _if matrix is not a list of list_ 
+        TypeError: _if matrix is not a list of list_
         TypeError: _if any list contains a value diff from an integer_
     """
 
@@ -38,9 +38,9 @@ def matrix_divided(matrix, div):
     if not all([len(x) == length for x in matrix]):
         raise TypeError("Each row of the matrix must have the same size")
 
-    new_matrix=[]
+    new_matrix = []
     for arr in matrix:
-        new_list=[]
+        new_list = []
         for num in arr:
             if not isinstance(num, int) and not isinstance(num, float):
                 raise TypeError(message)
