@@ -81,8 +81,7 @@ class Rectangle(Base):
         for row in range(self.__y):
             print("")
         for row in range(self.__height):
-            print(" " * (self.__x - 1),"#" * self.__width, end="")
-            print()
+            print((" " * self.__x) + ("#" * self.__width))
 
     def __str__(self):
         """String representation of a rectangle instance"""
