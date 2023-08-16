@@ -95,7 +95,7 @@ class Rectangle(Base):
         elif kwargs:
             idf = (self.__init__, (self.width, self.height, self.x, self.y))
             attributes = {
-                "id": idf
+                "id": idf,
                 "width": (setattr, (self, "width")),
                 "height": (setattr, (self, "height")),
                 "x": (setattr, (self, "x")),
