@@ -10,10 +10,10 @@ class Rectangle(Base):
     """Class Rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -74,14 +74,14 @@ class Rectangle(Base):
 
     def area(self):
         """Returns the area value of the Rectangle instance."""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """Prints in stdout the Rectangle instance with the character #"""
-        for row in range(self.__y):
+        for row in range(self.y):
             print("")
-        for row in range(self.__height):
-            print((" " * self.__x) + ("#" * self.__width))
+        for row in range(self.height):
+            print((" " * self.x) + ("#" * self.width))
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute:"""
@@ -100,7 +100,6 @@ class Rectangle(Base):
                 else:
                     if key in attributes:
                         setattr(self, key, value)
-            
 
     def __str__(self):
         """String representation of a rectangle instance"""
