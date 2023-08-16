@@ -83,14 +83,23 @@ class Rectangle(Base):
         for row in range(self.__height):
             print((" " * self.__x) + ("#" * self.__width))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assigns an argument to each attribute:"""
-        attributes = ['id', 'width', 'height', 'x', 'y']
-        for i, arg in enumerate(args):
-            if i == 0 and arg is None:
-                self.__init__(self.width, self.height, self.x, self.y)
-            else:
-                setattr(self, attributes[i], arg)
+        if args and len(args) != 0:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                if i == 0 and arg is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    setattr(self, attributes[i], arg)
+        elif kwargs and len(kwargs) != 0:
+            attributes = {
+                "id": (self.__init__, (self.width, self.height, self.x, self.y)),
+                "width": (setattr, (self, "width")),
+                "height": (setattr, (self, "height")),
+                "x": (setattr, (self, "x")),
+                "y": (setattr, (self, "y"))
+            }
 
     def __str__(self):
         """String representation of a rectangle instance"""
