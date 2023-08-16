@@ -83,6 +83,13 @@ class Rectangle(Base):
         for row in range(self.__height):
             print((" " * self.__x) + ("#" * self.__width))
 
+    def update(self, *args):
+        """assigns an argument to each attribute:"""
+        attr = ['id', 'width', 'height', 'x', 'y']
+        if args:
+            for arg in range(args):
+                self.attr[arg] = args[arg]
+
     def __str__(self):
         """String representation of a rectangle instance"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
