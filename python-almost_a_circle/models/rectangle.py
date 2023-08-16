@@ -101,6 +101,14 @@ class Rectangle(Base):
                 "y": (setattr, (self, "y"))
             }
 
+            for key, value in kwargs.items():
+                action, args = attributes.get(key, (None, None))
+                if action:
+                    if key == "id" and value is None:
+                        action(*args)
+                    else:
+                        action(*args, value)
+
     def __str__(self):
         """String representation of a rectangle instance"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
