@@ -85,11 +85,12 @@ class Rectangle(Base):
 
     def update(self, *args):
         """assigns an argument to each attribute:"""
-        attr = ['__id', '__width', '__height', '__x', '__y']
-        if args:
-            self.__init__(self.width, self.height, self.x, self.y)
-            for arg in range(1, args):
-                self.attr[arg] = args[arg]
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        for i, arg in enumerate(args):
+            if i == 0 and arg is None:
+                self.__init__(self.width, self.height, self.x, self.y)
+            else:
+                setattr(self, attributes[i], arg)
 
     def __str__(self):
         """String representation of a rectangle instance"""
