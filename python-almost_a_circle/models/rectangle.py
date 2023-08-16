@@ -87,7 +87,8 @@ class Rectangle(Base):
         """assigns an argument to each attribute:"""
         attr = ['id', 'width', 'height', 'x', 'y']
         if args:
-            for arg in range(args):
+            self.__init__(self.width, self.height, self.x, self.y)
+            for arg in range(1, args):
                 self.attr[arg] = args[arg]
 
     def __str__(self):
