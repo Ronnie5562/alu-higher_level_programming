@@ -84,17 +84,18 @@ class Rectangle(Base):
             print((" " * self.__x) + ("#" * self.__width))
 
     def update(self, *args, **kwargs):
-        """assigns an argument to each attribute:"""
-        if args and len(args) != 0:
+        """Assigns an argument to each attribute:"""
+        if args:
             attributes = ['id', 'width', 'height', 'x', 'y']
             for i, arg in enumerate(args):
                 if i == 0 and arg is None:
                     self.__init__(self.width, self.height, self.x, self.y)
                 else:
                     setattr(self, attributes[i], arg)
-        elif kwargs and len(kwargs) != 0:
+        elif kwargs:
+            idf = (self.__init__, (self.width, self.height, self.x, self.y)),
             attributes = {
-                "id": (self.__init__, (self.width, self.height, self.x, self.y)),
+                "id": idf
                 "width": (setattr, (self, "width")),
                 "height": (setattr, (self, "height")),
                 "x": (setattr, (self, "x")),
