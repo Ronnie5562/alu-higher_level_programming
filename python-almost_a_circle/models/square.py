@@ -29,18 +29,17 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Updates the values of a Square object attributes"""
-        attrs = ['id', 'size', 'x', 'y']
+        attributes = ['id', 'size', 'x', 'y']
         if args:
-            for arg in range(args):
-                if arg == 1:
-                    setattr(self, 'width', args[arg])
-                    setattr(self, 'height', args[arg])
+            for i, arg in enumerate(args):
+                if i == 0 and arg is None:
+                    self.__init__(self.size, self.x, self.y)
                 else:
-                    setattr(self, attrs[arg], args[arg])
+                    setattr(self, attributes[i], arg)
         elif kwargs:
-            for key, value in kwargs:
-                if key == "size":
-                    setattr(self, 'width', value)
-                    setattr(self, 'height', value)
+            for key, value in kwargs.items():
+                if key == "id" and value is None:
+                    self.__init__(self.size, self.x, self.y)
                 else:
-                    setattr(self, key, value)
+                    if key in attributes:
+                        setattr(self, key, value)
