@@ -93,22 +93,14 @@ class Rectangle(Base):
                 else:
                     setattr(self, attributes[i], arg)
         elif kwargs:
-            idf = (self.__init__, (self.width, self.height, self.x, self.y))
-            attributes = {
-                "id": idf,
-                "width": (setattr, (self, "width")),
-                "height": (setattr, (self, "height")),
-                "x": (setattr, (self, "x")),
-                "y": (setattr, (self, "y"))
-            }
-
             for key, value in kwargs.items():
-                action, args = attributes.get(key, (None, None))
-                if action:
-                    if key == "id" and value is None:
-                        action(*args)
-                    else:
-                        action(*args, value)
+                attributes = ['id', 'width', 'height', 'x', 'y']
+                if key == "id" and value is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    if key in attributes:
+                        setattr(self, key, value)
+            
 
     def __str__(self):
         """String representation of a rectangle instance"""
