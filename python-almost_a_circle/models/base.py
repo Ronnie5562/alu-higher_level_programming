@@ -27,7 +27,8 @@ class Base:
             return "[]"
         if (not isinstance(list_dictionaries, list) or not
                 all(type(dic) == dict for dic in list_dictionaries)):
-            return json.dumps(list_dictionaries)
+            raise TypeError("list_dictionaries must be a list of dictionaries")
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
