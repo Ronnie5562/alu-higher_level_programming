@@ -226,5 +226,4 @@ class TestRectangle(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         """Clean up class-level resources after tests"""
-        if os.path.exists("Rectangle.json"):
-            os.remove("Rectangle.json")
+        print("Test completed")
