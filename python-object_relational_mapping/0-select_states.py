@@ -15,4 +15,5 @@ conn = MySQLdb.connect(
 
 with conn.cursor() as cur:
     cur.execute('SELECT * FROM states ORDER BY states.id;')
+    [print(row) for row in cur.fetchall()]
 conn.close()
