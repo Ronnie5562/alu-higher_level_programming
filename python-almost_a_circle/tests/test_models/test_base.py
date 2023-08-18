@@ -12,8 +12,13 @@ from models.square import Square
 class TestBase(unittest.TestCase):
     """Test suite for Base class"""
 
-    def test_basic(self):
-        """Test basic initialization and id assignment"""
+    @classmethod
+    def setUpClass(cls):
+        """Setup test"""
+        print("Starting test")
+
+    def test_base_initialization(self):
+        """Test base initialization and id assignment"""
         base = Base()
         base_1 = Base()
         base_89 = Base(89)
@@ -73,7 +78,16 @@ class TestBase(unittest.TestCase):
             self.assertEqual(file.read(),
                              '[{"id": 1, "width": 1, '
                              '"height": 2, "x": 0, "y": 0}]')
-
+    @classmethod
+    def tearDownClass(cls):
+        """End of test output"""
+        created_files = ["Square.json", "Rectangle.json"]
+        for cfile in created_files:
+            try:
+                os.remove(cfile)
+            except IOError:
+                pass
+        print("Completed test")
 if __name__ == '__main__':
     unittest.main()
 
