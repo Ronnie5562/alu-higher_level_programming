@@ -1,3 +1,4 @@
+![img](https://start.alueducation.com/resource/1568810909000/AluLogoForAdmissions)
 # Alu-higher_level_programming
 ***
 Alu-higher_level_programming is my dedicated GitHub repository showcasing all the work I have accomplished during this module at The African Leadership Univeristy. 
